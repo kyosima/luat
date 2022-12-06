@@ -1,0 +1,17 @@
+<div class="entry-content">
+	<?php if ( flatsome_option('blog_show_excerpt') || is_search())  { ?>
+	<div class="entry-summary">
+		<?php the_excerpt(); ?>
+		<div class="text-<?php echo get_theme_mod( 'blog_posts_title_align', 'left' );?>">
+			<br>
+			<a class="button secondary is-bevel is-small " href="<?php echo get_the_permalink(); ?>"><?php _e('Discover More', 'flatsome'); ?></a>
+		</div>
+	</div>
+	<?php } else { ?>
+	<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'flatsome' ) ); ?>
+	<?php
+		wp_link_pages();
+	?>
+<?php }; ?>
+
+</div>
